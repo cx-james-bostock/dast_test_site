@@ -29,7 +29,7 @@ with app.app_context():
 
 @app.route('/')
 def root():
-    return render_template('login.html')
+    return redirect(url_for('login'))
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
