@@ -77,16 +77,25 @@ pip install -r requirements.txt
 
 ## Running the Application
 
-Bash and PowerShell scripts are provided to simplify running the application.
+The application uses the `.flaskenv` file for its development configuration.
+This means that, to run the application, all that is needed is the following
+command.
+```
+flask run
+```
 
-On Linux:
+You should see output like the following.
 ```
-./run_test_site.sh
-```
-
-On Windows:
-```
-.\run_test_site.ps1
+ * Serving Flask app 'dast_test_site.py'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.35.1.11:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 128-633-692
 ```
 
 # Adding Users
