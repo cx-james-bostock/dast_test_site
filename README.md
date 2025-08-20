@@ -10,6 +10,32 @@ features that make it interesting:
   equivalent. The second one exists purely because the Zap context
   only allows a single login URL.
 
+# Endpoints
+
+The application provides the following endpoints:
+
+- `/`: shows the main login screen.
+- `/login`: the main login endpoint.
+- `/altlogin`: the alternate login endpoint (one of the things that
+  prompted the creation of this application was a real use case where
+  a web site had two different login pages granting access to
+  different parts of the application).
+- `/jsonlogin`: a third login endpoint that expects the credentials to
+  be passed using JSON instead of form encoding.
+- `/logout`: the logout endpoint (which works independently of the
+  endpoint used to login).
+- `/dashboard`: the user dashboard endpoint. What is displayed to the
+  user depends on the user’s role: if the user has the `admin` role,
+  then the administrator dashboard is shown, otherwise the user
+  dashboard is shown.
+- `/user`: the user page. This page is only accessible if the user has
+  either the `admin` role or the `user` role.
+- `/altuser`: the alternate user page. This is only accessible if the
+  user has either the `admin` role or the `altuser` role.
+- `/admin`: shows the administrator dashboard.
+- `/register`: allows a user to register.
+
+
 # Running the Application
 
 ## Creating a Virtual Environment
