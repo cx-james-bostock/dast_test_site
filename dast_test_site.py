@@ -125,7 +125,7 @@ def user():
     role = session.get('role')
     username = session.get('username')
     if role in [ADMIN, USER]:
-        return render_template('altuser.html', username=username)
+        return render_template('user.html', username=username)
     return render_template('forbidden.html', username=username), 403
 
 @app.route('/admin')
