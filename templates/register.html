@@ -2,12 +2,20 @@
 {% block content %}
 <h2>Register</h2>
 <form method="POST">
-    <label>Username:</label>
-    <input type="text" name="username" required>
-    <label>Password:</label>
-    <input type="password" name="password" required>
-    <label>Role:</label>
-    <input type="text" name="role" required>
-    <button type="submit">Register</button>
+    <p>
+        <label>Username:</label>
+        <input type="text" name="username" required>
+    </p>
+    <p>
+        <label>Password:</label>
+        <input type="password" name="password" required>
+    </p>
+    <p>
+        <label>Role:</label>
+        <input type="text" name="role" required>
+    </p>
+    <p>
+        <button type="submit">Register</button>
+    </p>
 </form>
 {% endblock %}
