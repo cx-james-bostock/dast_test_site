@@ -139,33 +139,7 @@ sqlite>
 
 # Running the DAST CLI
 
-The repository contains a sample configuration file `dast_test_site.yaml`
-and a driver script, `run_dast_scan.sh` (PowerShell version to come) that
-simplifies running the DAST CLI. You will need to update the URLs in the
-configuration file to match your environment. Assuming that you are running
-both the Flask application and the DAST CLI on the same server, you should
-use the IP address of your server (e.g., the IP address in the file,
-172.35.1.122 is that of the AWS EC2 instance in which I have been testing
-this).
-
-To use the driver script, you need to set the `API_KEY` environment variable
-to your Checkmarx One API key.
-
-The driver script has three mandatory arguments: the base URL of the Checkmarx
-One tenant, which is specified using the `--base-url` command line flag;
-the Checkmarx One environment id, which is specified using the
-`--environment-id` command line flag; and the location of the configuration
-file, which is specified using the `--config` command line flag. Note that
-the driver script mounts the current directory on the `/demo` mountpoint so
-the configuration file should be prefixed with `/demo/`.
-
-For example:
-```
-./run_dast_scan.sh --base-url https://anz.ast.checkmarx.net --environment-id f0812034-502f-4431-b758-a3ee5c395ac1 --config /demo/dast_test_site.yaml
-```
-
-Other arguments that the DAST CLI accepts can also be passed to the driver
-script. For example:
-```
-./run_dast_scan.sh --base-url https://anz.ast.checkmarx.net --environment-id f0812034-502f-4431-b758-a3ee5c395ac1 --config /demo/dast_test_site.yaml --log-level debug
-```
+As of Checkmarx One 3.41, there is a new [DAST onboarding
+process](https://docs.checkmarx.com/en/34965-396179-version-3-41---july-7,-2025.html#UUID-d2f0945c-d1c3-71e6-84a1-3e99d2ca8be4_section-idm143825412458952)
+which does not require a configuration file and automatically
+generates the Docker command line needed to run a DAST scan.
